@@ -1,29 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(){
+void main() {
 
+    char palavrasecreta[20];
+    sprintf(palavrasecreta, "MELANCIA");
 
-	char palavra[20];
-	sprintf(palavra, "MELANCIA");
+    int acertou = 0;
+    int enforcou = 1;
 
-	int acertou = 0;
-	int enforcou = 0;
+    do {
+        char chute;
+        printf("Qual letra? ");
+        scanf("%c", &chute);
 
-  
-	do{
-		char chute;
-		printf("letra?\n");
-		scanf("%c", &chute);
+        for(int i = 0; i < strlen(palavrasecreta); i++) {
+            printf("Estou vendo a letra %c na posicao %d\n", palavrasecreta[i], i);
+            if (palavrasecreta[i] == chute)
+            {
+                printf("A posição %d tem essa letra!\n\n\n", i);
+            }
+        }
+        printf("\n");
 
-		for (int i = 0; i < strlen(palavra); i++)
-		{
-			if(palavra[i] == chute){
-				printf("na posicao %d tem essa letra!\n", i);
-			}
-		}
-
-
-	}while(acertou == 0 && enforcou == 0);
+    } while (1);
 
 }
